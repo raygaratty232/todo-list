@@ -8,40 +8,36 @@ var out = document.querySelector(".out");
 
 write.addEventListener('click' , createElement);
 
+
 function createElement(){
-	var todoBox = document.createElement('div');
-	var clear = document.createElement('input');
-	clear.setAttribute('type' , 'checkbox');
-	todoBox.className = 'todo-box';
-	todoBox.appendChild(clear)
-	out.appendChild(todoBox)
-	writeTodo(todoBox)
-	clearBox(clear , todoBox)
+	var box = document.createElement('div');
+	box.className = 'box';
+	out.appendChild(box);
+	boxItem(box)
+	checkDelete(box)
 }
 
-function clearBox(elem , todoBox){
-	elem.addEventListener('input' , function(){
-		if(elem.checked){
-			todoBox.hidden = true;
+function boxItem(parentElement){
+	var txt = document.createElement('p');
+	txt.className = 'txt';
+	txt.innerHTML = fild.value;
+	parentElement.appendChild(txt)
+}
+
+function checkDelete(parentElement){
+	var check = document.createElement('input');
+	check.setAttribute('type' , 'checkbox');
+	parentElement.appendChild(check);
+	clearBox(check , parentElement)
+}
+
+function clearBox(checkBox , parentElement){
+	checkBox.addEventListener('input' , function(){
+		if(checkBox.check !== false){
+			parentElement.hidden = true
 		}
 	})
 }
-
-function writeTodo(todoBox){
-	var outTodo = document.createElement('p');
-	outTodo.className = 'txt';
-	outTodo.innerHTML += fild.value;
-	todoBox.appendChild(outTodo);
-}
-
-function createRadio(){
-	
-}
-
-
-
-
-
 
 
 

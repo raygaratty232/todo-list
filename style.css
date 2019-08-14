@@ -42,3 +42,18 @@ li{
 	text-transform: uppercase;
 	border: none;
 }
+.box{
+	height: 50px;
+	padding: 10px;
+	border: 2px solid;
+	margin: 25px;
+	justify-content: space-around;
+	align-items: center;
+}
+.txt{
+	float: left;
+	font-size: 25px;
+}
+input[type="checkbox"]{
+	float: right;
+}
